@@ -20,7 +20,7 @@ public class Main {
     public CommandLineRunner demo(CustomerRepository repository) {
         return (args) -> {
             // save a few customers
-            repository.save(new Customer("Jack3", "Bauer3"));
+            repository.save(new Customer("Jack4", "Bauer4"));
             repository.save(new Customer("Chloe", "O'Brian"));
             repository.save(new Customer("Kim", "Bauer"));
             repository.save(new Customer("David", "Palmer"));
