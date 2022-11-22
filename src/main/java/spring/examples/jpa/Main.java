@@ -19,6 +19,7 @@ public class Main {
     @Bean
     public CommandLineRunner demo(CustomerRepository repository) {
         return (args) -> {
+            log.info("\n\n\n\n======================= Creating customers =======================");
             // save a few customers
             repository.save(new Customer("Jack4", "Bauer4"));
             repository.save(new Customer("Chloe", "O'Brian"));
@@ -27,6 +28,7 @@ public class Main {
             repository.save(new Customer("Michelle", "Dessler"));
 
             // fetch all customers
+            log.info("\n\n\n\n======================= Fetching all customers =======================");
             log.info("Customers found with findAll():");
             log.info("-------------------------------");
             for (Customer customer : repository.findAll()) {
@@ -35,6 +37,7 @@ public class Main {
             log.info("");
 
             // fetch an individual customer by ID
+            log.info("\n\n\n\n======================= Fetching an individual customer =======================");
             Customer customer = repository.findById(1L);
             log.info("Customer found with findById(1L):");
             log.info("--------------------------------");
@@ -42,6 +45,7 @@ public class Main {
             log.info("");
 
             // fetch customers by last name
+            log.info("\n\n\n\n======================= Fetching customer by lastname =======================");
             log.info("Customer found with findByLastName('Bauer'):");
             log.info("--------------------------------------------");
             repository.findByLastName("Bauer").forEach(bauer -> {
